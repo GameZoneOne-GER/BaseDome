@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Oxide.Plugins
 {
-    [Info("Base Dome", "GameZoneOne", "1.0.2")]
-    [Description("Nähert die Baufreigabe mit einer Kugel (Block-Hülle + konfigurierbarer Zuschlag).")]
+    [Info("Base Dome", "gamezoneone", "1.0.2")]
+    [Description("Visualizes the building privilege radius of your base as a transparent sphere.")]
     public class BaseDome : RustPlugin
     {
         private const string PermUse = "basedome.use";
@@ -94,13 +94,14 @@ namespace Oxide.Plugins
         {
             lang.RegisterMessages(new Dictionary<string, string>
             {
-                ["Help"] = "Nutze <color=#9f9>/basedome</color> oder <color=#9f9>/bd</color> (in der Baufreigabe starten). Recht: <color=#9f9>basedome.use</color>",
-                ["On"] = "Basis-Kuppel: <color=#8f8>an</color> (Gebäude-ID gespeichert).",
-                ["Off"] = "Basis-Kuppel: <color=#f88>aus</color>.",
-                ["NoPriv"] = "Du bist hier nicht in deiner Baufreigabe oder nicht am Werkzeugschrank berechtigt.",
-                ["NoBuilding"] = "Kein gültiges Gebäude für diese Baufreigabe gefunden.",
-                ["BuildingGone"] = "Das Gebäude existiert nicht mehr – Kuppel aus.",
-                ["AuthLost"] = "Keine Berechtigung mehr an diesem TC – Kuppel aus."
+                ["NoPermission"] = "You don't have permission to use /basedome.",
+                ["Help"]         = "Use <color=#9f9>/basedome</color> or <color=#9f9>/bd</color> (stand inside your building privilege). Permission: <color=#9f9>basedome.use</color>",
+                ["On"]           = "Base dome: <color=#8f8>on</color> (building ID saved).",
+                ["Off"]          = "Base dome: <color=#f88>off</color>.",
+                ["NoPriv"]       = "You are not in your building privilege here or not authorized at the tool cupboard.",
+                ["NoBuilding"]   = "No valid building found for this building privilege.",
+                ["BuildingGone"] = "The building no longer exists — dome off.",
+                ["AuthLost"]     = "No longer authorized at this TC — dome off.",
             }, this);
         }
 
@@ -123,7 +124,7 @@ namespace Oxide.Plugins
 
             if (!permission.UserHasPermission(player.UserIDString, PermUse))
             {
-                PrintToChat(player, lang.GetMessage("NoPriv", this, player.UserIDString));
+                PrintToChat(player, lang.GetMessage("NoPermission", this, player.UserIDString));
                 return;
             }
 
