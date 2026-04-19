@@ -9,6 +9,14 @@
 
 ---
 
+## Screenshots
+
+> Replace with actual screenshots — upload to `screenshots/` in the repo and update the paths below.
+
+![Dome visualization](https://placehold.co/800x450/0d1117/4d9375?text=Dome+Visualization)
+
+---
+
 ## Features
 
 - Draws a **transparent sphere** around your base showing the exact building privilege radius
