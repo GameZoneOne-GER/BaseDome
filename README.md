@@ -11,9 +11,7 @@
 
 ## Screenshots
 
-> Replace with actual screenshots — upload to `screenshots/` in the repo and update the paths below.
-
-![Dome visualization](https://placehold.co/800x450/0d1117/4d9375?text=Dome+Visualization)
+![Dome visualization](https://pic.gamezoneone.de/api/media/ukiits8x.png)
 
 ---
 
